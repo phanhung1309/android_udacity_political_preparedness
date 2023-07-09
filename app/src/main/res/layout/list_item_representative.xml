@@ -23,6 +23,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:profileImage="@{representative.official.photoUrl}"
             app:srcCompat="@drawable/ic_profile"
             tools:ignore="ContentDescription"
             tools:src="@drawable/ic_profile" />

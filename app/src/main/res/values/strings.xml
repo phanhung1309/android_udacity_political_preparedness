@@ -4,6 +4,15 @@
     <string name="upcoming_button">Upcoming elections</string>
     <string name="representative_button">Find my representatives</string>
 
-    <!-- TODO: Add necessary string values -->
+    <string name="search_title">Representative Search</string>
+    <string name="address_line_1_hint">Address Line 1</string>
+    <string name="address_line_2_hint">Address Line 2</string>
+    <string name="city_hint">City</string>
+    <string name="zip_hint">Zip</string>
+    <string name="state_hint">State</string>
+    <string name="button_search">Find my representatives</string>
+    <string name="button_location">Use my location</string>
+    <string name="representative_title">My representatives</string>
+    <string name="require_location_permission_error">Please enable location permission setting</string>
 
 </resources>

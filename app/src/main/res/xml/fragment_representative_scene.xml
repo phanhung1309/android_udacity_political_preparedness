@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@id/search_title" >
+            <CustomAttribute
+                app:attributeName="text"
+                app:customStringValue="@string/search_title" />
+        </Constraint>
+        <Constraint android:id="@id/address_line_1" />
+        <Constraint android:id="@id/address_line_2" />
+        <Constraint android:id="@id/city" />
+        <Constraint android:id="@id/state" />
+        <Constraint android:id="@id/zip" />
+        <Constraint android:id="@id/button_search" />
+        <Constraint android:id="@id/button_location" />
+        <Constraint
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            app:layout_constraintTop_toBottomOf="@id/representative_title"
+            android:id="@+id/representatives_recycler_view" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/search_title"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@id/address_line_1"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@id/address_line_2"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@id/city"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@id/state"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@id/zip"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@id/button_search"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@id/button_location"
+            android:visibility="gone" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start" >
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/representatives_recycler_view" />
+    </Transition>
+</MotionScene>
