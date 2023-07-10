@@ -14,5 +14,7 @@
     <string name="button_location">Use my location</string>
     <string name="representative_title">My representatives</string>
     <string name="require_location_permission_error">Please enable location permission setting</string>
+    <string name="upcoming_election_title">Upcoming Elections</string>
+    <string name="saved_election_title">Saved Elections</string>
 
 </resources>
