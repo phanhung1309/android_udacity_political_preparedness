@@ -51,6 +51,11 @@ class ElectionsFragment : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.refreshElections()
+    }
+
     private fun navigateToDetailFragment(election: Election) {
         this.findNavController().navigate(
             ElectionsFragmentDirections.actionElectionsFragmentToVoterInfoFragment(

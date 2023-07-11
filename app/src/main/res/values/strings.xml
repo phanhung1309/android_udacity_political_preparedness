@@ -12,9 +12,18 @@
     <string name="state_hint">State</string>
     <string name="button_search">Find my representatives</string>
     <string name="button_location">Use my location</string>
+
     <string name="representative_title">My representatives</string>
-    <string name="require_location_permission_error">Please enable location permission setting</string>
     <string name="upcoming_election_title">Upcoming Elections</string>
     <string name="saved_election_title">Saved Elections</string>
+
+    <string name="election_information">Election Information</string>
+    <string name="voting_locations">Voting Locations</string>
+    <string name="ballot_information">Ballot Information</string>
+    <string name="follow_button">Follow election</string>
+    <string name="unfollow_button">Unfollow election</string>
+
+    <string name="require_location_permission_error">Please enable location permission setting</string>
+
 
 </resources>

@@ -60,4 +60,8 @@ class ElectionsViewModel(private val dataSource: ElectionDao) : ViewModel() {
     fun displayVoterInfoComplete() {
         _navigateToVoterInfo.value = null
     }
+
+    fun refreshElections() {
+        getSavedElectionsFromLocalDatabase()
+    }
 }
