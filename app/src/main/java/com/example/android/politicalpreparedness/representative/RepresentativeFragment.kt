@@ -32,6 +32,13 @@ class DetailFragment : Fragment() {
     private val viewModel: RepresentativeViewModel by lazy {
         ViewModelProvider(this).get(RepresentativeViewModel::class.java)
     }
+    private lateinit var binding: FragmentRepresentativeBinding
+
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("motionLayoutState", binding.motionLayout.currentState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,14 +46,21 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentRepresentativeBinding.inflate(inflater)
         val adapter = RepresentativeListAdapter()
+
+        binding = FragmentRepresentativeBinding.inflate(inflater)
 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.representativesRecyclerView.adapter = adapter
         viewModel.representatives.observe(viewLifecycleOwner) { representatives ->
             adapter.submitList(representatives)
+        }
+
+        savedInstanceState?.let {
+            it.getInt("motionLayoutState").let { restoredState ->
+                binding.motionLayout.transitionToState(restoredState)
+            }
         }
 
         binding.buttonSearch.setOnClickListener {
