@@ -30,16 +30,18 @@ class ElectionsFragment : Fragment() {
             : View? {
         val binding = FragmentElectionBinding.inflate(inflater)
 
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = this
-        binding.upcomingElectionsRecyclerView.adapter =
-            ElectionListAdapter(ElectionListener {
-                viewModel.displayVoterInfo(it)
-            })
-        binding.savedElectionsRecyclerView.adapter =
-            ElectionListAdapter(ElectionListener {
-                viewModel.displayVoterInfo(it)
-            })
+        with(binding) {
+            viewModel = this@ElectionsFragment.viewModel
+            lifecycleOwner = this@ElectionsFragment
+            upcomingElectionsRecyclerView.adapter =
+                ElectionListAdapter(ElectionListener {
+                    this@ElectionsFragment.viewModel.displayVoterInfo(it)
+                })
+            savedElectionsRecyclerView.adapter =
+                ElectionListAdapter(ElectionListener {
+                    this@ElectionsFragment.viewModel.displayVoterInfo(it)
+                })
+        }
 
         viewModel.navigateToVoterInfo.observe(viewLifecycleOwner, Observer {
             if (null != it) {
